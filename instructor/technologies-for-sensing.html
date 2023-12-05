@@ -86,11 +86,11 @@
   Sensing and tracking 3D environments
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 33%" class="percentage">
-    33%
+<aside class="col-md-12 lesson-progress"><div style="width: 25%" class="percentage">
+    25%
   </div>
   <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 33%" aria-valuenow="33" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar incubator" role="progressbar" style="width: 25%" aria-valuenow="25" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -171,6 +171,7 @@
 <li><a href="#motion-capture">Motion capture</a></li>
 <li><a href="#types-of-tracking-systems">Types of Tracking Systems</a></li>
 <li><a href="#advantages-and-disadvantages">Advantages and disadvantages</a></li>
+<li><a href="#performance-and-cost">Performance and cost</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
         
@@ -181,6 +182,15 @@
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
         <a href="structure-from-motion.html">3. Structure from Motion</a>
+    </div><!--/div.accordion-header-->
+        
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="tracking-in-vr.html">4. Tracking in VR</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -301,7 +311,7 @@ Reality and Mixed Reality to be more affordable.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>VR headset can include a variety of sensors, including:</p>
 <ul><li>Inertial Measurement Unit (IMU) to measures force and angular rate
@@ -390,7 +400,14 @@ capabilities</a>.</p>
 </h2>
 <hr class="half-width"><p>Non-optical systems are portable but can restrict movement.</p>
 <p>Optical systems can be very precise, but are non portable.</p>
-<!--
+</section><section id="performance-and-cost"><h2 class="section-heading">Performance and cost<a class="anchor" aria-label="anchor" href="#performance-and-cost"></a>
+</h2>
+<hr class="half-width"><p>An important metric for sensing is the accuracy of the system. This
+includes both hardware and software.</p>
+<p>Active methods are more accurate, depending on the emitting power of
+the light source. But they tend to have a higher cost.</p>
+<p>Passive methods are reliant on the ability to find features in the
+scene, but have a lower cost. <!--
 ## Image sensors
 
 In a camera system, 
@@ -403,7 +420,7 @@ Active and passive methods.
 Active methods provide their own source of energy to illuminate the objects they observe.
 
 For instance LIDAR (Light Detection and Ranging), depth sensor and 3D scanners.
--->
+--></p>
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 

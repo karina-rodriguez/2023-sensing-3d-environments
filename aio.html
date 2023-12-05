@@ -214,6 +214,18 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="tracking-in-vr.html">4. Tracking in VR</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -301,10 +313,12 @@ environments?</li>
 <ul>
 <li>Have an awareness of the methods available for sensing (or gathering
 data) of physical 3D environments and objects.</li>
+<li>Understand the different types of sensors, in particular for
+detecting motion.</li>
 <li>Develop a good understanding of the Structure from motion method,
 also known as photogrammetry</li>
-<li>Understand the applications of these method to Virtual Reality and
-Mixed Reality systems.</li>
+<li>Understand the applications of these sensing technologies for
+Virtual Reality and Mixed Reality systems.</li>
 </ul>
 </div>
 </div>
@@ -335,7 +349,7 @@ development of VR/MR applications</p>
   Output
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Tracking allows the system to understand how a user is moving with
 respect to their physical environment, as well as allowing the user to
@@ -419,7 +433,7 @@ Reality and Mixed Reality to be more affordable.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>VR headset can include a variety of sensors, including:</p>
 <ul>
@@ -527,7 +541,15 @@ capabilities</a>.</p>
 <hr class="half-width">
 <p>Non-optical systems are portable but can restrict movement.</p>
 <p>Optical systems can be very precise, but are non portable.</p>
-<!--
+</section><section id="performance-and-cost"><h2 class="section-heading">Performance and cost<a class="anchor" aria-label="anchor" href="#performance-and-cost"></a>
+</h2>
+<hr class="half-width">
+<p>An important metric for sensing is the accuracy of the system. This
+includes both hardware and software.</p>
+<p>Active methods are more accurate, depending on the emitting power of
+the light source. But they tend to have a higher cost.</p>
+<p>Passive methods are reliant on the ability to find features in the
+scene, but have a lower cost. <!--
 ## Image sensors
 
 In a camera system, 
@@ -540,7 +562,7 @@ Active and passive methods.
 Active methods provide their own source of energy to illuminate the objects they observe.
 
 For instance LIDAR (Light Detection and Ranging), depth sensor and 3D scanners.
--->
+--></p>
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
@@ -559,7 +581,80 @@ photogrammetry.</p>
 by different viewpoints.</p>
 <p>Can use a sequence of images (taken separately or as a video).</p>
 <p>Artificial lights illuminate the scene and are not exploited for
-measuring.</p></section>
+measuring.</p></section><section id="aio-tracking-in-vr"><p>Content from <a href="tracking-in-vr.html">Tracking in VR</a></p>
+<hr>
+<p> Last updated on 2023-12-05 | 
+        
+        <a href="https://github.com/karina-rodriguez/2023-sensing-3d-environments/edit/main/episodes/tracking-in-vr.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<p>Virtual Reality (VR) headsets are distinct from regular 3D displays
+in that they are tracked. This allows the system to provide 3 Degrees or
+6 Degrees of Freedom.</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Positional_tracking_in_virtual_reality.png" alt="positional tracking" class="figure mx-auto d-block"><figcaption>Positional tracking in virtual reality © Ilsladkih at
+<a href="https://commons.wikimedia.org/wiki/File:Positional_tracking_in_virtual_reality.png" class="external-link">Wikimedia</a></figcaption></figure><p>Tracking in VR is also known as a positional tracking or pose
+tracking. It allows the headset to capture, follow, and get information
+about an object’s orientation and position, to be transferred to an
+application for further processing.</p>
+<figure><img src="https://developers.google.com/static/ml-kit/images/vision/pose-detection/jump.gif" alt="pose tracking" class="figure mx-auto d-block"><figcaption>Pose estimation library from Google © <a href="https://developers.google.com/ml-kit/vision/pose-detection" class="external-link">Google</a></figcaption></figure><p>See examples of Pose Estimation libraries:</p>
+<ul>
+<li>Media Pipe: <a href="https://huggingface.co/spaces/hysts/mediapipe-pose-estimation" class="external-link">https://huggingface.co/spaces/hysts/mediapipe-pose-estimation</a>
+</li>
+<li>Tensor Flow: <a href="https://www.tensorflow.org/lite/examples/pose_estimation/overview" class="external-link">https://www.tensorflow.org/lite/examples/pose_estimation/overview</a>
+Pose detection</li>
+</ul>
+<figure><img src="https://storage.googleapis.com/download.tensorflow.org/example_images/movenet_demo.gif" alt="" class="figure mx-auto d-block"><figcaption>Pose estimation library from Tensor Flow © <a href="https://www.tensorflow.org/lite/examples/pose_estimation/overview" class="external-link">Tensor
+Flow</a></figcaption></figure><section id="what-do-we-track"><h2 class="section-heading">What do we track?<a class="anchor" aria-label="anchor" href="#what-do-we-track"></a>
+</h2>
+<hr class="half-width">
+<p>In a VR system, the aim is to track information of the user,
+including:</p>
+<ul>
+<li>Position and orientation of the user’s head.</li>
+<li>Controllers and other important objects.</li>
+<li>Hands</li>
+</ul>
+<p>In AR systems, object, images, or markers are used to determine the
+user’s position and orientation.</p>
+</section><section id="types-of-tracking"><h2 class="section-heading">Types of tracking<a class="anchor" aria-label="anchor" href="#types-of-tracking"></a>
+</h2>
+<hr class="half-width">
+<p>As before, tracking can be optical vs non optical. We will focus on
+the optical, and make a distinction between outside-in and inside-out
+tracking.</p>
+<figure><img src="https://xinreality.com/mediawiki/images/5/5a/Inside_out_vs._outside_in_tracking.png" alt="outside in and inside out" class="figure mx-auto d-block"><figcaption>Inside-out vs. outside-in tracking © <a href="https://xinreality.com/wiki/File:Inside_out_vs._outside_in_tracking.png" class="external-link">Ishii
+from under CC BY-SA 3.0</a></figcaption></figure><div class="section level3">
+<h3 id="optical-outside-in-tracking">Optical outside-in tracking<a class="anchor" aria-label="anchor" href="#optical-outside-in-tracking"></a>
+</h3>
+<p>In this type of tracking, cameras are placed in stationary locations
+in the environment to track the position of markers on the tracked
+device. For example, the HTC VIVE uses outside-in tracking.</p>
+<p>IR LEDs on its headset and controllers allow external cameras in the
+environment to read their positions.</p>
+</div>
+</section><section id="optical-inside-out-tracking"><h2 class="section-heading">Optical Inside-out tracking<a class="anchor" aria-label="anchor" href="#optical-inside-out-tracking"></a>
+</h2>
+<hr class="half-width">
+<p>The camera is placed on the tracked device and looks outward to
+determine its location in the environment.</p>
+<p>Headsets have multiple cameras facing different directions to get
+views of its entire surroundings.</p>
+<p>Can work with or without markers.</p>
+</section><section id="slam-simultaneous-localization-and-mapping"><h2 class="section-heading">SLAM (Simultaneous localization and mapping)<a class="anchor" aria-label="anchor" href="#slam-simultaneous-localization-and-mapping"></a>
+</h2>
+<hr class="half-width">
+<p>Markerless tracking, such as on the Oculus Quest.</p>
+<p>Algorithms to construct or update a map of an unknown environment
+while simultaneously keeping track of an agent’s location within it</p>
+<p>A 3D map of the environment is generated in real time.</p>
+<p><a href="https://www.youtube.com/watch?app=desktop&amp;v=J5oW7r-2dlM" title="tracking" class="external-link"><img src="https://i.ytimg.com/vi/J5oW7r-2dlM/maxresdefault.jpg" alt="IMAGE ALT TEXT" class="figure"></a></p>
+<p>Further information: <a href="https://xinreality.com/wiki/Main_Page" class="external-link uri">https://xinreality.com/wiki/Main_Page</a></p>
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ -->
+</section></section>
 </div>
     </main>
 </div>
